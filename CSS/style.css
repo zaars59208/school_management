@@ -1,0 +1,71 @@
+h3{
+	color:white;
+	  padding: 20px 0;
+	
+	text-align: center;
+	
+}
+.col{
+	
+	
+	background-color:none;
+	
+	
+}
+#left_image{
+	
+				height: 450px;
+				width: 400px;
+				//border-radius: 5px;
+	
+	
+}
+#happiness{
+	
+			overflow:hidden;
+			height: 340px;
+			width: 600px;
+			text-align:center;
+			padding-bottom: 10px;
+			
+}
+#content{
+	
+	
+	background-color:white;
+	color:balck;
+	font-family:Sans-serif;
+	font-size: 16px;
+	text-align:justify;
+
+	padding-top:  10px;
+	
+	
+	
+}
+body{
+	
+	background-color: rgb(132, 136, 132);
+	
+}
+#reg{
+	
+	
+		background-color:#ffe6e6;
+	
+}
+
+#logo{
+		
+		
+				height: 90px;
+				width: 100px;
+				padding:10px;
+	
+}
+#text_decoration{
+	
+	
+	
+	text-decoration:none;
+}

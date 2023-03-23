@@ -1,0 +1,143 @@
+<?php
+
+include("Php/config.php");
+
+
+			if(isset($_GET['id']))
+				
+				{		
+
+						$id= $_GET['id'];
+						echo $id;
+
+
+						$query ="select* from user where id='$id'";
+
+						$run_query = mysqli_query($connect, $query);
+
+						while ($data=mysqli_fetch_array($run_query)) 
+
+
+						{
+									
+									$Role = $data['Role'];
+									$Name = $data['Name'];
+									$Email = $data['Email'];
+									$Skill = $data['Skills'];
+
+
+						}
+						
+							 
+								
+				}
+
+?>
+
+	
+
+<!Doctype>
+<Html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="CSS/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
+
+</head>
+<body id="reg">
+
+<center> <div class="container-fluid">
+
+<center><h3> Welcome to the World of Coordination </h3></center>
+
+	  <div class="row">
+	  <div class="col">
+	  		<div class="d-flex justify-content-center">
+
+		 <form name=" " action="Register.php" method="POST" ></span> 
+
+			<div class="mb-3">
+
+
+			<label > Enter Your ID:	</label>
+
+			<input type="text" name="User_Id" class="form-control" placeholder="It is Auto Generated" disabled value=""> </input>
+			
+			<label > Enter Your Role:	</label>
+
+			<input type="text" name="User_Role" class="form-control" value="<?php echo $Role ?>"> </input>
+			<label > Enter Your Name:	</label>
+
+			<input type="text" name="User_Name" class="form-control" value="<?php echo $Name ?>"> </input>
+			
+			<label type="email" > Enter Your Email:	</label> 
+			<input type="text" name="User_Email" class="form-control" value="<?php echo $Email ?>"> </input>
+			<label > Enter Your Skills:	</label>
+
+			<input type="text" name="User_Skills" class="form-control" value="<?php echo $Skill ?>"> </input>
+
+
+
+			</div>
+					<button type="submit" name="btnSave" class="btn btn-primary"  > Update </button>		
+
+
+
+
+
+	</form> </div>
+
+
+
+
+
+<?php
+
+
+
+				if(isset($_POST['btnSave']));
+
+				{
+						//$ID= $_POST['User_Id'];
+						$Role= $_POST['User_Role'];
+						$Name= $_POST['User_Name'];
+						$Email=$_POST['User_Email'];
+						$Skill=$_POST['User_Skills'];
+
+
+					$query =" insert into user (id, Role, Name, Email, Skills)values ('', '$Role', '$Name', '$Email','$Skill')";
+
+						$Result = mysqli_query($connect, $query);
+
+						if($Result)
+
+						{
+
+							echo "Record is Added"."<br>";
+							
+							
+
+
+						}
+						else{
+							echo "Sorry Record is not Added";
+						}
+
+
+				}
+
+						
+
+?>
+
+
+</div>
+</div>
+
+				
+
+</div>
+</center>
+
+</body>
+</html>
